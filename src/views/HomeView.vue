@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="banner">
-      <div class="banner-title">
+      <div class="banner-title" id="home">
         <h2>資訊力量<br/>引領時代</h2>
         <img :src="require('@/assets/images/Ellipse 17.png')" alt="decoration">
         <h3>Power of technology , lead the world</h3>
@@ -22,11 +22,44 @@
           <p>安惠資訊科技股份有限公司成立於2020年，是台灣餐飲與零售業資訊系統的新創企業，設有專案管理、應用系統、硬體維護與支援部門，瞄準資訊系統解決方案及周邊軟硬體服務商機。</p>
           <p>致力於提供連鎖流通業資訊系統的研發設計與系統整合，以及串聯電子支付系統，提供消費者多元的支付方式，以數位方式深化會員經營。</p>
         </div>
+        <div class="customer">
+          <div class="customer-list">
+            <count-up 
+            class="count-up"
+            :start-val="startVal" 
+            :end-val="113" 
+            :duration="4"
+            :loop="3"
+            :delay="3"/>
+            <h4>合作夥伴</h4>
+          </div>
+          <div class="customer-list">
+            <count-up 
+            class="count-up"
+            :start-val="startVal" 
+            :end-val="69" 
+            :duration="3"
+            :loop="3"
+            :delay="4"/>
+            <h4>合作案例</h4>
+          </div>
+          <div class="customer-list">
+            <count-up 
+            class="count-up"
+            :start-val="startVal" 
+            :end-val="23" 
+            :duration="2"
+            :loop="3"
+            :delay="5"/>
+            <h4>自有產品</h4>
+          </div>
+      </div>
       </div>
       <div class="about-pic">
         <img class="sec2bg" :src="require('@/assets/images/Multi-device targeting-rafiki.svg')" alt="">
         <img class="sec2rbg" :src="require('@/assets/images/sec2rbg.png')" alt="">
       </div>
+      
     </div>
     <product-item id="product" />
     <div class="company">
@@ -44,14 +77,16 @@
 
 <script>
 import ProductItem from "@/components/ProductItem.vue"
+import CountUp from 'vue-countup-v3'
 export default {
   name: 'HomeView',
   components:{
-    ProductItem
+    ProductItem,
+    CountUp
   },
   data() {
     return {
-      
+      startVal: 0,
     }
   },
   
@@ -203,7 +238,29 @@ export default {
 
 
   }
+  .customer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 50px;
+    .customer-list{
+      margin: auto 20px;
+      h4{
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
+  .count-up{
+    
+    width: 200px;
+    font-size: 120px;
+    color: #057DCD;
+    font-weight: bold;
 
+  }
+    }
+    
+  }
   .company{
       position: relative;
       .company-title{
@@ -297,6 +354,7 @@ export default {
   .about{
     flex-direction: column;
     align-items: center;
+    margin: 350px auto 20px auto;
     .about-description{
       width: 90%;
       right: 0;
@@ -314,9 +372,17 @@ export default {
       }
     }
     .about-pic{
-      width: 80%;
-      margin-bottom: 50px;
+      display: none;
     }
+  }
+  .customer{
+    width: 80%;
+    margin: 20px auto;
+    flex-direction: column;
+    .customer-list{
+      margin: 10px auto;
+    }
+    
   }
   .company{
       position: relative;

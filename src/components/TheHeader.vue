@@ -4,7 +4,7 @@
             <!-- LOGO -->
             <header>
                 <h1>
-                    <router-link to="/" class="logo">
+                    <router-link to="#home" class="logo">
                         <img :src="require('@/assets/images/AHT-logo.png')" alt="AHT-LOGO">
                     </router-link>
                 </h1>
@@ -38,7 +38,8 @@ export default {
         return {
             
         }
-    },
+    }
+    
 }
 </script>
 

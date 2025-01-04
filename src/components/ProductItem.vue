@@ -124,6 +124,7 @@ export default {
       grid-template-columns: repeat(3,1fr);
       justify-content: center;
       align-content: center;
+      
        .products-item{
         width: 70%;
         margin: 20px auto;
@@ -132,6 +133,10 @@ export default {
         border: 1px solid rgba(168, 168, 168, 0.50);
         background: rgba(255, 255, 255, 0.26);
         box-shadow: 0px 3px 7.5px 0px rgba(0, 0, 0, 0.25);
+        transition: 0.5s;
+      &:hover{
+        transform: scale(1.05);
+      }
         img{
           width: 50%;
         }
